@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alocação de Refugiados</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+</head>
+
+<body class="container">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="height: 60px;
+                padding: 5px 15px;" href="index.html">
+                    <img alt="Hope for Refugees" src="img/terra.png" />
+                </a>
+            </div>
+            <h3>Hope for Refugees</h3>
+        </div>
+    </nav>
+
+    <div id="mensagemView"></div>
+
+    <form class="form">
+
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <div class="jumbotron">
+                    <img src="img/acnur.png">
+                    <p>
+                    <h4>Alto Comissariado das Nações Unidas para Refugiados é
+                        uma agência da ONU que atua para assegurar e proteger os direitos das pessoas em situação de
+                        refúgio em todo o mundo.</h4>
+                    </p>
+                    <br>
+                    <br>
+                    <p><a class="btn btn-primary btn-lg" href="https://www.acnur.org/portugues/" role="button"
+                            target="_blank">Saiba
+                            mais!</a></p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="foto">Foto de identificação</label>
+                            <input type="text" id="foto" class="form-control" placeholder="Insira o link da imagem"
+                                required autofocus />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" class="form-control" required autofocus />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="sexo">Sexo</label>
+                            <br>
+                            <label class="radio-inline" style="margin-left: 40px;">
+                                <input type="radio" name="sexo" id="sexo" value="Masculino" required autofocus> <img
+                                    src="img/male.png" />
+                            </label>
+                            <label class="radio-inline" style="margin-left: 40px;">
+                                <input type="radio" name="sexo" id="sexo" value="Feminino"> <img src="img/female.png" />
+                            </label>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="dataNascimento">Data Nascimento</label>
+                        <input type="date" id="dataNascimento" class="form-control" required autofocus />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="pais">País de origem</label>
+                            <input id="pais" type="text" class="form-control" required autofocus />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="estado">Local de Alocação - <img src="img/brazil.png"></label>
+                            <select id="estado" name="estado" class="form-control" required autofocus>
+                                <option value="">- Selecione estado -</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-success btn-block"><img src="img/check.png" />
+                            Salvar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+    <div class="page-header">
+        <h1>Refugiados alocados <small><img src="" /></small></h1>
+    </div>
+
+    <div class="row">
+        <div id="refugiadosView"></div>
+    </div>
+    <script src="lib/jquery.min.js"></script>
+    <script src="js/models/Refugiado.js"></script>
+    <script src="js/controllers/RefugiadoController.js"></script>
+    <script src="js/models/Refugiados.js"></script>
+    <script src="js/views/View.js"></script>
+    <script src="js/views/RefugiadosView.js"></script>
+    <script src="js/views/MensagemView.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
